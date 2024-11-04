@@ -18,7 +18,9 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.gunder.market.components.MainTopBar
+import com.gunder.market.components.MainTopCategory
 import com.gunder.market.components.TopMenu
+import com.gunder.market.model.dummyListTopCategory
 import com.gunder.market.model.dummyListTopMenu
 import com.gunder.market.ui.theme.MarketTheme
 
@@ -48,9 +50,26 @@ fun MarketApp(modifier: Modifier = Modifier) {
 //        your code compose here
         MainTopBar( )
         MainTopMenu()
+        MainCategoryTop()
     }
 
 }
+
+@Composable
+fun MainCategoryTop(){
+    LazyRow {
+        items(dummyListTopCategory){
+            MainTopCategory(listTopCategory = it)
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MainCategoryTopPreview() {
+    MarketTheme {
+        MainCategoryTop()
+    }}
 
 @Composable
 fun MainTopMenu() {
