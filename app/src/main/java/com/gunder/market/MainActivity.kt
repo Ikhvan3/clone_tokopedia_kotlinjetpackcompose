@@ -18,9 +18,11 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.gunder.market.components.MainBottomCategory
+import com.gunder.market.components.MainCardCategory
 import com.gunder.market.components.MainTopBar
 import com.gunder.market.components.MainTopCategory
 import com.gunder.market.components.TopMenu
+import com.gunder.market.model.dummyListBanner
 import com.gunder.market.model.dummyListBottomCategory
 import com.gunder.market.model.dummyListTopCategory
 import com.gunder.market.model.dummyListTopMenu
@@ -53,6 +55,7 @@ fun MarketApp(modifier: Modifier = Modifier) {
         MainTopBar( )
         MainTopMenu()
         MainCategoryTop()
+        MainCategoryCard()
         MainCategoryBottom()
 
     }
@@ -73,6 +76,15 @@ fun MainCategoryBottom(){
 fun MainCategoryBottomPreview() {
     MarketTheme {
         MainCategoryBottom()
+    }
+}
+
+@Composable
+fun MainCategoryCard(){
+    LazyRow {
+        items(dummyListBanner){
+            MainCardCategory(listBanner = it)
+        }
     }
 }
 
