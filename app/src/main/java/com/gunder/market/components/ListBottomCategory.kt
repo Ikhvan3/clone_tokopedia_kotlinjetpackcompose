@@ -15,29 +15,29 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.gunder.market.R
-import com.gunder.market.model.ListCategory
+import com.gunder.market.model.ListBottomCategory
 import com.gunder.market.ui.theme.MarketTheme
 
 @Composable
-fun MainTopCategory(modifier: Modifier = Modifier,listTopCategory: ListCategory){
+fun MainBottomCategory(modifier: Modifier = Modifier, listBottomCategory: ListBottomCategory){
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier.padding(start = 16.dp, end = 16.dp,top = 8.dp,bottom = 8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
         Image(
-            painter = painterResource(id = listTopCategory.imgTopCategory),
+            painter = painterResource(id = listBottomCategory.imgBottomCategory),
             contentDescription = null,
             modifier = modifier.size(40.dp)
         )
-        Text(text = stringResource(id = listTopCategory.txtTopCategory), fontSize = 12.sp)
+        Text(text = stringResource(id = listBottomCategory.txtBottomCategory), fontSize = 12.sp)
     }
 }
 
 @Preview(showBackground = true)
 @Composable
-fun MainTopCategoryPreview(){
+fun MainBottomCategoryPreview(){
     MarketTheme {
-        MainTopCategory(listTopCategory = ListCategory(R.drawable.cicil, R.string.txt_credit))
+        MainBottomCategory(listBottomCategory = ListBottomCategory(R.drawable.cicil, R.string.txt_credit))
     }
 }
